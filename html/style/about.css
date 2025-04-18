@@ -1,0 +1,111 @@
+:root {
+    --medical-blue: #3B1E54;
+    --medical-green: #9B7EBD;
+    --medical-light: #D4BEE4;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f9ff;
+}
+
+.navbar-brand {
+  font-weight: 700;
+}
+
+.medical-bg {
+  background-color: var(--medical-blue);
+}
+
+.hero-about {
+  background: linear-gradient(#3B1E54, rgba(64, 56, 78, 0.8)), 
+              url('../imgs/about-land.JPG') ;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 5rem 0;
+  margin-bottom: 3rem;
+}
+
+.mission-card {
+  border-left: 5px solid var(--medical-blue);
+  transition: transform 0.3s ease;
+}
+
+.mission-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+.mission-card .card-body svg{
+    font-size: 35px !important;
+}
+.doctor-card {
+    height: 380px;
+  transition: transform 0.3s ease;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.doctor-card:hover {
+  transform: translateY(-5px);
+}
+
+.user-image {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    min-height: 200px;
+    max-height:220px ;
+    object-fit: cover;
+}
+
+.stats-item {
+    height: 150px;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stats-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--medical-blue);
+}
+
+.timeline {
+  position: relative;
+  padding-left: 50px;
+  margin-bottom: 100px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--medical-blue);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -25px;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--medical-blue);
+  border: 3px solid white;
+}
+.timeline-item p{
+    font-size: 20px;
+}

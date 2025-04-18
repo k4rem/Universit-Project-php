@@ -1,0 +1,356 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+.login-modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  display: none;
+  transform: translate(-50%, -50%) scale(1.25);
+  background-color: #0000005e;
+  box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+.login-modal.active {
+  top: 50%;
+  left: 50%;
+  display: block;
+  transform: translate(-50%, -50%) scale(1);
+
+}
+#close {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background-color: #9b7ebd;
+  top: 20px;
+  right: 20px;
+  font-size: 20px;
+  color: #000;
+  cursor: pointer;
+  z-index: 10011;
+}
+.container-modal {
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  position: relative;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 921px !important;
+  width: 100% !important;
+  height: 680px   !important;
+  margin-top: 36px !important;
+}
+.container-modal p {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  margin: 20px 0;
+}
+
+.container-modal span {
+  font-size: 12px;
+}
+
+.container-modal a {
+  color: #333;
+  font-size: 13px;
+  text-decoration: none;
+  margin: 15px 0 10px;
+}
+
+.container-modal .sign-btn {
+  background-color: #512da8;
+  color: #fff;
+  font-size: 12px;
+  padding: 10px 45px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.type-btn {
+  background-color: transparent !important;
+  border: #512da8 1px solid !important;
+  color: black !important;
+  transition: 0.3s !important;
+  width: 46%;
+}
+
+.type-btn:hover,
+.type-btn.selected {
+  background-color: #512da8 !important;
+  color: #fff !important;
+}
+
+.container-modal button.hidden {
+  background-color: transparent;
+  border-color: #fff;
+}
+
+.container-modal form {
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  height: 100%;
+}
+
+.container-modal input {
+  background-color: #eee;
+  border: none;
+  margin: 8px 0;
+  padding: 10px 15px;
+  font-size: 13px;
+  border-radius: 8px;
+  width: 49%;
+  outline: none;
+}
+
+.form-container-modal {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.sign-in {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.container-modal.active .sign-in {
+  transform: translateX(100%);
+}
+
+.sign-up {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.container-modal.active .sign-up {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: move 0.6s;
+}
+
+@keyframes move {
+  0%,
+  49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+  50%,
+  100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+.social-icons {
+  margin: 20px 0;
+}
+
+.social-icons a {
+  border: 1px solid #ccc;
+  border-radius: 20%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 3px;
+  width: 40px;
+  height: 40px;
+}
+.social-icons a:hover {
+  background-color: #512da8;
+  color: #fff;
+  border-color: transparent;
+  transition: 0.5s;
+}
+
+.toggle-container-modal {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: all 0.6s ease-in-out;
+  border-radius: 150px 0 0 100px;
+  z-index: 1000;
+}
+
+.container-modal.active .toggle-container-modal {
+  transform: translateX(-100%);
+  border-radius: 0 150px 100px 0;
+}
+
+.toggle {
+  background-color: #512da8;
+  height: 100%;
+  background: linear-gradient(to right, #5c6bc0, #512da8);
+  color: #fff;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: all 0.6s ease-in-out;
+}
+
+.container-modal.active .toggle {
+  transform: translateX(50%);
+}
+
+.toggle-panel {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 30px;
+  text-align: center;
+  top: 0;
+  transform: translateX(0);
+  transition: all 0.6s ease-in-out;
+}
+
+.toggle-left {
+  transform: translateX(-200%);
+}
+
+.container-modal.active .toggle-left {
+  transform: translateX(0);
+}
+
+.toggle-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.container-modal.active .toggle-right {
+  transform: translateX(200%);
+}
+
+#doc-info {
+  display: none;
+}
+.toggle-btn button {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .container-modal {
+    margin-top: 50px;
+    width: 390px;
+    min-height: 630px;
+  }
+  .container-modal a {
+    margin: 25px 0 10px 0;
+  }
+  .container-modal a:hover {
+    color: #512da8;
+  }
+  .container-modal .sign-btn {
+    background-color: #512da8;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 40px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  .container-modal .sign-btn:hover {
+    background-color: transparent;
+    color: #512da8;
+    border: #512da8 1px solid;
+    transition: 0.3s;
+  }
+  .type-btn {
+    font-size: 12px;
+    padding: 10px 45px;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  .container-modal form {
+    display: block;
+    padding: 20px 40px;
+  }
+  .container-modal  {
+    height: 800px !important;
+  }
+  .form-container-modal {
+    height: 80%;
+  }
+  .sign-in {
+    left: 0;
+    width: 100%;
+    opacity: 1;
+    z-index: 1;
+  }
+  .sign-up {
+    left: 100%;
+    width: 100%;
+    opacity: 1;
+    z-index: 222;
+  }
+  .container-modal.active .sign-up {
+    transform: translateX(0);
+    left: 0;
+  }
+  #register-mobile {
+    display: block;
+    background-color: #512da8;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: #512da8 1px solid;
+    color: #fff;
+    bottom: 20px;
+    left: 43%;
+    transition: 0.5s;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  #close {
+    top: 25px;
+  }
+  .toggle-container-modal {
+    display: none;
+  }
+  .mobile-signup-btn {
+    width: 70%;
+  }
+}
