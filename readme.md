@@ -107,5 +107,5 @@ If you've made changes to the Docker configuration or the database, follow these
 This project is licensed under the MIT License.
 
 ## Contact
-- **Developer**: Your Name
-- **Email**: your.email@example.com
+- **Developer**: Karem Mohamed
+- **Email**: karem.herog@gmail.com
